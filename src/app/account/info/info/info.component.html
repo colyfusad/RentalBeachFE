@@ -1,0 +1,31 @@
+<div class="container">
+    <h2>Thông tin người dùng</h2>
+    <form>
+      <div class="form-group">
+        <label for="username">Tài khoản:</label>
+        <input type="text" class="form-control" id="username" [(ngModel)]="user$.userName" name="username" readonly>
+      </div>
+      <div class="form-group">
+        <label for="name">Họ và tên:</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="user$.name" name="name" readonly>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" [(ngModel)]="user$.email" name="email" readonly>
+      </div>
+      <div class="form-group">
+        <label for="phone">Số điện thoại:</label>
+        <input type="tel" class="form-control" id="phone" [(ngModel)]="user$.phone" name="phone" readonly>
+      </div>
+      <div class="form-group">
+        <label for="phone">Số định danh:</label>
+        <input type="tel" class="form-control" id="phone" [(ngModel)]="user$.identifier" name="identifier" readonly>
+      </div>
+      <div class="form-group">
+        <label for="address">Địa chỉ:</label>
+        <textarea class="form-control" id="address" [(ngModel)]="user$.address" name="address" readonly></textarea>
+      </div>
+      <button type="button" style="margin-top: 20px;" class="btn btn-primary" routerLink="/update-person">Cập nhật thông tin</button>
+    </form>
+  </div>
+  

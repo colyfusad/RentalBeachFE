@@ -1,0 +1,28 @@
+<div class="product-management">
+    <h1>Quản Lý Loại Sản Phẩm</h1>
+    <div>
+        <button class="btn btn-new" routerLink="/admin/categories/add" style="background-color: green; padding: 8px; margin-bottom: 20px;" type="button">Thêm loại sản phẩm mới</button>
+    </div>
+    <!-- Hiển thị danh sách sản phẩm -->
+    <div class="product-list">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Loại sản phẩm</th>
+            <th>Mô tả</th>
+          </tr>
+        </thead>
+        <tbody class="product-list" *ngIf="(categories | async) as categories">
+                <tr *ngFor="let category of categories">
+                    <td>{{ category.name }}</td>
+                    <td>{{ category.description }}</td>
+                    <td>
+                        <button routerLink="/admin/categories/edit/{{category.id}}" type="button" style="background-color: yellow;">Sửa</button>
+                        <button (click)="deleteCategory(category.id)" style="margin-left: 10px; background-color: red;" type="button">Xóa</button>
+                    </td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+
+  

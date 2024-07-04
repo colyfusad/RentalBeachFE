@@ -1,0 +1,8 @@
+<h1>Kết quả tìm kiếm sản phẩm cho từ khóa '{{ searchQuery }}'</h1>
+<div class="product-list" *ngIf="(products$ | async) as products">
+    <div class="row">
+      <div class="col-3" *ngFor="let product of products">
+        <app-product-item [product]="product"></app-product-item>
+      </div>
+    </div>
+</div>

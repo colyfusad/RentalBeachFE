@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .product-management {
+    padding: 20px;
+  }
+
+  h1, h2 {
+    color: #333;
+  }
+
+  /* Danh sách sản phẩm */
+  .product-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+
+  .product-list th, .product-list td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .product-list th {
+    background-color: #f2f2f2;
+  }
+
+  .product-list button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  /* Thêm sản phẩm */
+  .add-product, .edit-product, .delete-product {
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .add-product form, .edit-product form, .delete-product form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 10px;
+  }
+
+  .add-product label, .edit-product label, .delete-product label {
+    font-weight: bold;
+  }
+
+  .add-product input, .add-product textarea, .edit-product input, .edit-product textarea, .delete-product input {
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  .add-product button, .edit-product button, .delete-product button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }

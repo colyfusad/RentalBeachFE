@@ -1,0 +1,11 @@
+<div class="product-item">
+    <div class="product-image">
+      <img href="" [src]="'assets/' + product.imageUrl + '.jpg'" [alt]="product.name">
+    </div>
+    <div class="product-info">
+      <h3 class="product-name">{{ product.name }}</h3>
+      <p class="product-price">{{ product.pricePerDay | number:'1.0-2' }} VND</p>
+      <button class="btn btn-new" routerLink="/product/view-details/{{ product.id }}">Xem chi tiết</button>
+      <button class="btn btn-warning" type="button" (click)="addToCart(product)">Thêm vào giỏ hàng</button>
+    </div>
+  </div>

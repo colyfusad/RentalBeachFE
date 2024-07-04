@@ -1,0 +1,14 @@
+<!-- Update Status Modal -->
+<form action="" method="post" (submit)="onSubmit()">
+    <div>
+        <h2>Cập nhật trạng thái đơn hàng: {{ selectedRentalId }}</h2>
+        <div>
+            <label for="status">Chọn trạng thái:</label>
+            <select [(ngModel)]="selectedStatusId" name="status" id="status">
+                <option *ngFor="let status of status$ | async" [value]="status.id">{{ status.statusName }}</option>
+            </select>
+        </div>
+        <button style="margin-top: 20px;" class="btn btn-primary" type="submit">Xác nhận</button>
+        <button style="margin-top: 20px; margin-left: 10px;" class="btn btn-primary" routerLink="/admin/order-list">Trở về</button>
+    </div>
+</form>

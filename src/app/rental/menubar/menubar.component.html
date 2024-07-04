@@ -1,0 +1,54 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <button routerLink="/products/list" mat-button class="toolbar-title">
+    <h1>Travel with Coly</h1>
+  </button>
+
+  <div class="search-container">
+    <div class="input-group">
+      <input type="text" (keydown.enter)="onSearch()" class="form-control" placeholder="Nhập sản phẩm cần tìm kiếm..." [(ngModel)]="searchQuery">
+      <div class="input-group-append">
+        <button style="margin-left: 10px;" class="btn btn-primary" type="button" (click)="onSearch()">Tìm kiếm</button>
+      </div>
+    </div>
+  </div>
+
+  <span class="spacer"></span>
+  <button mat-button routerLink="/cart">Giỏ hàng</button>
+  <button mat-button routerLink="/order">Đơn hàng</button>
+
+  <ng-container>
+    <button *ngIf="userId != 0" mat-button [matMenuTriggerFor]="person">
+      <mat-icon iconPositionEnd>person</mat-icon>
+      Tài khoản
+    </button>
+  
+    <mat-menu #person>
+      <button mat-button routerLink="/info-person">Thông tin tài khoản</button>
+      <button mat-button routerLink="/edit-password">Đổi mật khẩu</button>
+      <button mat-button (click)="logOut()">Đăng xuất</button>
+    </mat-menu>
+  
+    <button routerLink="/login" *ngIf="userId == 0" mat-button>Đăng nhập</button>
+</ng-container>
+</mat-toolbar>
+
+<mat-drawer-container>
+  <mat-drawer opened="false" position="start" mode="side" #drawer>
+    <mat-list *ngIf="(categories | async) as categories">
+      <mat-list-item *ngFor="let categori of categories">
+        <button routerLink="/products/list/category/{{ categori.id }}" mat-button>
+          <mat-icon>toc</mat-icon>
+          {{ categori.name }}
+        </button>
+      </mat-list-item>
+    </mat-list>  
+  </mat-drawer>
+  <mat-drawer-content>
+    <div style="min-height: 800px;">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

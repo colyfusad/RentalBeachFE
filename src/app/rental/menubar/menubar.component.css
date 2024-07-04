@@ -1,0 +1,32 @@
+.spacer{
+    flex: auto;
+}
+.mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .toolbar-title {
+    flex: 1;
+  }
+  
+  .search-container {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .spacer {
+    flex: 1;
+  }
+  
+  .input-group {
+    width: 100%;
+  }
+  
+  .input-group .form-control {
+    width: auto;
+    flex-grow: 1;
+  }
+  

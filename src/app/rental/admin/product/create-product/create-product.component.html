@@ -1,0 +1,50 @@
+<div style="margin-left: 50px;">
+    <h2>Thêm sản phẩm mới</h2>
+<form action="" method="post" [formGroup]="productAdd" (submit)="onSubmit()">
+    <div class="form-group">
+        <label for="">Tên sản phẩm</label>
+        <input type="text" class="form-control" formControlName="name">
+        <div *ngIf="isSubmit && f.name.errors">
+            <small *ngIf="f.name.errors['required']">Tên sản phẩm không được để trống</small>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="">Mô tả</label>
+        <input type="text" class="form-control" formControlName="description">
+    </div>
+
+    <div class="form-group">
+        <label for="">Giá</label>
+        <input type="text" class="form-control" formControlName="pricePerDay">
+        <div *ngIf="isSubmit && f.pricePerDay.errors">
+            <small *ngIf="f.pricePerDay.errors['required']">Giá không được để trống</small>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="">Số lượng</label>
+        <input type="text" class="form-control" formControlName="quanityAvailable">
+        <div *ngIf="isSubmit && f.quanityAvailable.errors">
+            <small *ngIf="f.quanityAvailable.errors['required']">Số lượng không được để trống</small>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="">Ảnh sản phẩm</label>
+        <input type="text" class="form-control" formControlName="imageUrl">
+    </div>
+
+    <div class="form-group">
+        <label for="">Loại sản phẩm</label>
+        <select *ngIf="(categoryList | async) as categoryList" formControlName="categoriId" class="form-control">
+            <option value="">Chọn loại sản phẩm</option>
+            <option *ngFor="let cat of categoryList" value="{{cat.id}}">{{cat.name}}</option>
+        </select>
+        <div *ngIf="isSubmit && f.categoriId.errors">
+            <small *ngIf="f.categoriId.errors['required']">Loại sản phẩm không được để trống</small>
+        </div>
+    </div>
+    <button style="background-color: green; margin-top: 20px;" class="btn btn-new" type="submit">Thêm</button>
+</form>
+</div>

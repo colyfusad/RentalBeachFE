@@ -1,0 +1,53 @@
+<div style="margin-left: 50px;">
+    <h2>Cập nhật thông tin cá nhân</h2>
+    <form action="" method="post" [formGroup]="personEdit" (submit)="onSubmit()">
+        <div class="form-group">
+            <label for="userName">Tài khoản:</label>
+            <input type="text" class="form-control" formControlName="userName">
+            <div *ngIf="isSubmit && f.userName.errors">
+                <small *ngIf="f.userName.errors['required']">Tài khoản không được để trống</small>
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <label for="username">Họ và tên:</label>
+            <input type="text" class="form-control" formControlName="name">
+            <div *ngIf="isSubmit && f.name.errors">
+                <small *ngIf="f.name.errors['required']">Họ và tên không được để trống</small>
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <label for="username">Email:</label>
+            <input type="text" class="form-control" formControlName="email">
+            <div *ngIf="isSubmit && f.email.errors">
+                <small *ngIf="f.email.errors">Email không được để trống</small>
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <label for="username">Số điện thoại:</label>
+            <input type="text" class="form-control" formControlName="phone">
+            <div *ngIf="isSubmit && f.phone.errors">
+                <small *ngIf="f.phone.errors['required']">Số điện thoại không được để trống</small>
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <label for="username">Số định danh:</label>
+            <input type="text" class="form-control" formControlName="identifier">
+            <div *ngIf="isSubmit && f.identifier.errors">
+                <small *ngIf="f.identifier.errors['required']">Số định danh không được để trống</small>
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <label for="username">Địa chỉ:</label>
+            <input type="text" class="form-control" formControlName="address">
+            <div *ngIf="isSubmit && f.address.errors">
+                <small *ngIf="f.address.errors['required']">Địa chỉ không được để trống</small>
+            </div>
+        </div>
+        <button style="margin-top: 20px;" class="btn btn-primary" type="submit">Cập nhật</button>
+    </form>
+</div>

@@ -1,0 +1,5 @@
+<!-- <app-menu-admin></app-menu-admin> -->
+<app-menubar *ngIf="!isAdminRoute"></app-menubar>
+<app-menu-admin *ngIf="isAdminRoute"></app-menu-admin>
+<!-- <app-footer></app-footer> -->
+<router-outlet></router-outlet>

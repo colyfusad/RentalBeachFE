@@ -1,0 +1,90 @@
+{
+  "stocks": [
+    {
+      "id": "2",
+      "name": "ko",
+      "code": "09",
+      "price": 11,
+      "previousPrice": "80",
+      "exchange": "s",
+      "favorite": "false"
+    },
+    {
+      "id": "3",
+      "name": "Test Stock Companyfdkkk",
+      "code": "TSC",
+      "price": "85",
+      "previousPrice": "80",
+      "exchange": "NASDAQ",
+      "favorite": "false"
+    },
+    {
+      "id": "4",
+      "name": " kkk",
+      "code": "TSC",
+      "price": "85",
+      "previousPrice": "80",
+      "exchange": "NASDAQ",
+      "favorite": "false"
+    },
+    {
+      "id": "2496",
+      "name": "hu",
+      "code": "hhhh",
+      "price": 111,
+      "stockExchange": "NASDAQ",
+      "stockConfirm": true
+    },
+    {
+      "id": "098c",
+      "name": "haha",
+      "code": "ha",
+      "price": 11,
+      "stockExchange": "NASDAQ",
+      "stockConfirm": true
+    },
+    {
+      "id": "dd24",
+      "name": "dfdskjf",
+      "code": "s11",
+      "price": 11,
+      "stockExchange": "NASDAQ",
+      "stockConfirm": true
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "user1",
+      "password": "user1"
+    },
+    {
+      "id": "2",
+      "name": "user2",
+      "password": "user2"
+    },
+    {
+      "id": "3",
+      "name": "user3",
+      "password": "user3"
+    },
+    {
+      "id": "1715578836088",
+      "name": "user0",
+      "password": "kk"
+    },
+    {
+      "id": "1715582063570",
+      "name": "k",
+      "password": "k"
+    },
+    {
+      "id": "1715587370172",
+      "name": "userll",
+      "password": "k"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

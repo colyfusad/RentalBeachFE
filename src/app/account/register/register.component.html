@@ -1,0 +1,9 @@
+<form class="register-form" (ngSubmit)="onSubmit()">
+    <h2>Đăng ký</h2>
+    <label for="" style="padding-bottom: 10px; color: red">{{message}}</label>
+    <input type="text" placeholder="Tên đăng nhập" [(ngModel)]="username" name="username">
+    <input type="password" placeholder="Mật khẩu" [(ngModel)]="password" name="password">
+    <input type="password" placeholder="Xác nhận mật khẩu" [(ngModel)]="re_password" name="re_password">
+    <button type="submit">Đăng ký</button>
+    <p class="message">Đã có tài khoản? <a href="/login">Đăng nhập</a></p>
+  </form>

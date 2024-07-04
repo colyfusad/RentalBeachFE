@@ -1,0 +1,57 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button (click)="myDrawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span routerLink="/admin">
+      Travel with Coly - Admin tối cao
+    </span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/admin">Home</button>
+    <button mat-button [matMenuTriggerFor]="category">
+      <mat-icon iconPositionEnd>keyboard_arrow_down</mat-icon>
+      Danh mục
+    </button>
+    <mat-menu #category>
+      <button mat-button routerLink="/admin/users">Quản lý Người dùng</button>
+      <button mat-button routerLink="/admin/categories">Quản lý loại sản phẩm</button>
+      <button mat-button routerLink="/admin/products">Quản lý sản phẩm</button>
+      <button mat-button routerLink="/admin/order-list">Quản lý đơn hàng</button>
+    </mat-menu>
+    <button mat-button routerLink="admin/login">Đăng nhập</button>
+  </mat-toolbar>
+  
+  <mat-drawer-container>
+    <mat-drawer #myDrawer opened="true" position="start" mode="side">
+      <mat-list>
+        <mat-list-item>
+          <button routerLink="/admin/users" mat-button>
+            <mat-icon>toc</mat-icon>
+            Quản lý người dùng
+          </button>
+        </mat-list-item>
+        <mat-list-item>
+            <button routerLink="/admin/categories" mat-button>
+              <mat-icon>toc</mat-icon>
+              Quản lý loại sản phẩm
+            </button>
+          </mat-list-item>
+          <mat-list-item>
+            <button routerLink="/admin/products" mat-button>
+              <mat-icon>toc</mat-icon>
+              Quản lý sản phẩm
+            </button>
+          </mat-list-item>
+          <mat-list-item>
+            <button routerLink="/admin/order-list" mat-button>
+              <mat-icon>toc</mat-icon>
+              Quản lý đơn hàng
+            </button>
+          </mat-list-item>
+      </mat-list>
+    </mat-drawer>
+    <mat-drawer-content>
+      <div style="min-height: 800px;">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>

@@ -1,0 +1,33 @@
+<div class="order-management">
+    <h1>Quản Lý Đơn hàng</h1>
+    <!-- Hiển thị danh sách sản phẩm -->
+    <div class="product-list">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Số hóa đơn</th>
+            <th>Ngày thuê</th>
+            <th>Ngày trả</th>
+            <th>Tổng giá trị</th>
+            <th>Trạng thái</th>
+            <th>Chức năng</th>
+          </tr>
+        </thead>
+        <tbody class="product-list" *ngIf="(rentals$ | async) as orders">
+                <tr *ngFor="let order of orders">
+                    <td>{{ order.id }}</td>
+                    <td>{{ order.rentalDate | date: 'dd-MM-yyyy' }}</td>
+                    <td>{{ order.returnDate | date: 'dd-MM-yyyy' }}</td>
+                    <td>{{ order.totalAmount | number: '1.0-2' }} VND</td>
+                    <td>{{ order.statusName }}</td>
+                    <td>
+                        <button class="btn btn-primary btn-sm" routerLink="/admin/order-list/view-details/{{ order.id }}">Xem chi tiết</button>
+                        <button class="btn btn-primary btn-sm" routerLink="/admin/order-list/update-status/{{ order.id }}">Cập nhật</button>
+                        <button class="btn btn-danger btn-sm" (click)="deleteRental(order.id)">Xóa đơn</button>
+                    </td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+
+  
